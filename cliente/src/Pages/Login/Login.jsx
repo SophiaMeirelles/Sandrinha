@@ -1,73 +1,69 @@
-import React from "react";
-import "../Login/Login.css";
-import {
-  Card,
-  Input,
-  Button,
-  CardBody,
-  CardHeader,
-  Typography,
-} from "@material-tailwind/react";
-import { CpuChipIcon } from "@heroicons/react/24/solid";
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import style from "./Login.module.css";
 
-function Login1() {
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/auth/login",
+        {
+          email,
+          password,
+        }
+      );
+
+      const { token, role } = response.data;
+
+      login(token, role);
+
+      if (role === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
+    } catch (error) {
+      setError(error.response?.data?.error || "Erro ao fazer login");
+      console.error("Erro ao fazer login", error);
+    }
+  };
+
   return (
-    <div className="DivBody h-screen flex justify-center items-center">
-      <Card shadow={false} className="card md:px-24 md:py-14 py-8">
-        <CardHeader
-          shadow={false}
-          floated={false}
-          className="card-header flex flex-col items-center mb-6"
-        >
-          <Typography variant="h3" className="text-center mb-2">
-            Acesse sua Conta
-          </Typography>
-          <Typography variant="h5" className="text-gray-600 text-center">
-            Bem-vindo de volta! Faça login para continuar.
-          </Typography>
-        </CardHeader>
-        <CardBody>
-          <form action="#" className="flex flex-col gap-4">
-            <div className="form-group">
-              <label htmlFor="usuario" className="label">
-                Nome de Usuário
-              </label>
-              <Input
-                id="usuario"
-                className="input"
-                size="lg"
-                type="text"
-                name="text"
-                placeholder="usuário"
-              />
-              <label htmlFor="senha" className="label">
-                Senha
-              </label>
-              <Input
-                id="senha"
-                className="input"
-                size="lg"
-                type="password"
-                name="senha"
-                placeholder="senha"
-              />
-            </div>
-            <Button size="lg" color="blue" className="button" fullWidth>
-              Entrar
-            </Button>
-          </form>
-          <div className="text-center mt-4">
-            <Typography variant="h5" className="text-sm text-gray-600 mt-2">
-              Não tem uma conta?
-              <a href="/register" className="text-blue-500 ml-1 hover:underline">
-                Cadastre-se
-              </a>
-            </Typography>
-          </div>
-        </CardBody>
-      </Card>
+    <div className={style.login}>
+      <h1>Login</h1>
+      <form onSubmit={handleLogin}>
+        <div>
+          <input
+            type="email"
+            value={email}
+            placeholder="E-mail"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            value={password}
+            placeholder="Senha"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        {error && <p>{error}</p>}
+        <button type="submit">Entrar</button>
+      </form>
     </div>
   );
-}
+};
 
-export default Login1;
+export default Login;
