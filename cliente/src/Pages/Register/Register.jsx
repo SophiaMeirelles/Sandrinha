@@ -1,99 +1,91 @@
-import React from "react";
-import "../Register/Register.css";
-import {
-  Card,
-  Input,
-  Button,
-  CardBody,
-  CardHeader,
-  Typography,
-} from "@material-tailwind/react";
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import style from "./Register.module.css";
+import { useAuth } from "../../context/AuthContext";
 
-function Register() {
+const Register = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("user");
+  const [error, setError] = useState("");
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/auth/register",
+        {
+          username,
+          email,
+          password,
+          role,
+        }
+      );
+
+      const { token, role: userRole } = response.data;
+
+      login(token, userRole);
+
+      if (userRole === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
+    } catch (error) {
+      setError(error.response?.data?.error || "Erro ao cadastrar");
+    }
+  };
+
   return (
-    <div className="DivBody h-screen flex justify-center items-center">
-      <Card shadow={false} className="card md:px-24 md:py-14 py-8">
-        <CardHeader
-          shadow={false}
-          floated={false}
-          className="card-header flex flex-col items-center mb-6"
-        >
-          <Typography variant="h3" className="text-center mb-2">
-            Bem-vindo!
-          </Typography>
-          <Typography variant="h5" className="text-gray-600 text-center">
-            Faça seu cadastro para continuar.
-          </Typography>
-        </CardHeader>
-        <CardBody>
-          <form action="#" className="flex flex-col gap-4">
-            <div className="form-group">
-              <label htmlFor="usuario" className="label">
-                Nome de Usuário
-              </label>
-              <Input
-                id="usuario"
-                className="input"
-                size="lg"
-                type="text"
-                name="text"
-                placeholder="usuário"
-              />
-              <label htmlFor="Rdb" className="label">
-                Usuário ou Administrador?
-              </label>
-              <div className="DivRdb">
-                <label htmlFor="RdbUser" className="label">
-                  Usuário
-                </label>
-                <Input
-                  id="RdbUser"
-                  className="input"
-                  size="lg"
-                  type="radio"
-                  name="Rdb"
-                />
-              </div>
-              <div  className="DivRdb">
-                <label htmlFor="RdbAdm" className="label">
-                  Administrador
-                </label>
-                <Input
-                  id="RdbAdm"
-                  className="input"
-                  size="lg"
-                  type="radio"
-                  name="Rdb"
-                />
-              </div>
-              <label htmlFor="senha" className="label">
-                Senha
-              </label>
-              <Input
-                id="senha"
-                className="input"
-                size="lg"
-                type="password"
-                name="senha"
-                placeholder="senha"
-              />
-            </div>
-            <Button size="lg" color="blue" className="button" fullWidth>
-              Entrar
-            </Button>
-          </form>
-          <div className="text-center mt-4">
-            <Typography variant="h5" className="text-sm text-gray-600 mt-2">
-              Já tem uma conta?
-              <a href="/login" className="text-blue-500 ml-1 hover:underline">
-                Faça Log-in
-              </a>
-            </Typography>
-          </div>
-        </CardBody>
-      </Card>
+    <div className={style.cadastro}>
+      <h1>Cadastrar</h1>
+      <form onSubmit={handleRegister}>
+        <div>
+          <input
+            type="text"
+            value={username}
+            placeholder="Nome de Usuário"
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <input
+            type="email"
+            value={email}
+            placeholder="E-mail"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            value={password}
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <select
+            id="role"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          >
+            <option value="user">Usuário</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </div>
+        {error && <p>{error}</p>}
+        <button type="submit">Cadastrar</button>
+      </form>
     </div>
   );
-}
+};
 
 export default Register;
