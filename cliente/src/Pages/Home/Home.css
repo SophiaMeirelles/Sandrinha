@@ -1,0 +1,135 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #002080;
+  color: rgb(136, 66, 66);
+}
+
+.home-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.home-nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.home-nav a:hover {
+  color: #ff4b4b;
+}
+
+.home-introduction {
+  text-align: center;
+  padding: 40px 20px;
+  color: rgb(180, 75, 75);
+}
+
+.home-introduction h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.home-introduction p {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.home-story,
+.home-testimonials,
+.home-products-preview {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.home-story h2,
+.home-testimonials h2,
+.home-products-preview h2 {
+  font-size: 2em;
+  color: #002080;
+  margin-bottom: 20px;
+}
+
+.home-testimonials .testimonial {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-testimonials .testimonial p {
+  font-style: italic;
+  color: #555;
+}
+
+.home-testimonials .testimonial span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #002080;
+}
+
+.home-products-preview .products-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-card {
+  width: 200px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+  color: #002080;
+}
+
+.product-card p {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.home-footer {
+  background-color: #002080;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.home-footer p {
+  margin: 0;
+}
