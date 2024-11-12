@@ -8,6 +8,7 @@ import Home from './Pages/Home/Home'
 import Carrinho from './Pages/Carrinho/Carrinho'
 
 import './App.css'
+import Footer from './Components/Footer/Footer';
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
         <Route path="/Register" element={<Register />} />
         <Route path="/Carrinho" element={<Carrinho />} />
     </Routes>
-    
+    <Footer />
 </Router>
   )
 }
