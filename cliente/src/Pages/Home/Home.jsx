@@ -74,9 +74,6 @@ function Home() {
         </div>
       </section>
 
-      <footer className="home-footer">
-        <p>&copy; 2023 Nossa Loja - Todos os direitos reservados.</p>
-      </footer>
     </>
   );
 }

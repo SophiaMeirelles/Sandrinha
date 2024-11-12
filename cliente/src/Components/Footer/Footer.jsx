@@ -1,9 +1,12 @@
 import React from "react";
-import "./Footer.css"; 
+import "./Footer.css";
 
 function Footer() {
   return (
     <footer className="footer-container">
+      <div className="home-footer">
+        <p>&copy; 2023 Nossa Loja - Todos os direitos reservados.</p>
+      </div>
       <div className="footer-section">
         <h3>Sobre Nós</h3>
         <p>

@@ -1,79 +1,75 @@
-.home-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 40px 20px;
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+/* Footer.css */
 
 .footer-container {
+  background-color: #1a1a2e; /* Azul escuro suave */
+  color: #e0e0e0; /* Cinza claro para o texto */
+  padding: 40px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 1200px;
-  width: 100%;
+  justify-content: space-between;
+  text-align: left;
+  flex-direction: column;
 }
 
 .footer-section {
   flex: 1;
-  min-width: 250px;
-  margin: 10px;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.home-footer, .footer-bottom {
+  text-align: center;
+  margin: 10px 0;
 }
 
 .footer-section h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #f2a365; /* Laranja suave */
 }
 
-.footer-section p,
-.footer-section ul {
-  font-size: 14px;
+.footer-section p {
+  font-size: 0.9rem;
   line-height: 1.5;
 }
 
 .footer-section ul {
-  padding-left: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .footer-section ul li {
-  list-style: none;
+  margin-bottom: 10px;
 }
 
 .footer-section ul li a {
-  color: #fff;
+  color: #f2a365; /* Laranja suave */
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .footer-section ul li a:hover {
-  color: #f39c12;
+  color: #e0e0e0; /* Cinza claro ao passar o mouse */
 }
 
-.social-icons {
+.social-media .social-icons {
   display: flex;
-  justify-content: start;
-  gap: 15px;
+  gap: 10px;
 }
 
-.social-icons a {
-  color: #fff;
-  font-size: 20px;
-  transition: color 0.3s;
+.social-media .social-icons a {
+  color: #f2a365; /* Cor laranja suave */
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
 }
 
-.social-icons a:hover {
-  color: #f39c12;
+.social-media .social-icons a:hover {
+  color: #e94560; /* Vermelho rosado para hover */
 }
 
 .footer-bottom {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #bbb;
-}
-
-.fab {
-  font-family: "Font Awesome 5 Brands";
+  border-top: 1px solid #3a3a52; /* Azul acinzentado */
+  padding-top: 10px;
+  font-size: 0.85rem;
+  color: #b0b0b0; /* Cinza médio */
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import style from "./Register.module.css";
+import { useAuth } from "../../context/AuthContext";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -23,8 +24,8 @@ const Register = () => {
           role,
         }
       );
-      navigate("/Login");
-    } catch (error) {
+        navigate("/Login");
+     } catch (error) {
       setError(error.response?.data?.error || "Erro ao cadastrar");
     }
   };

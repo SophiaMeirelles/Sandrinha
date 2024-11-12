@@ -1,0 +1,71 @@
+/* Carrinho.css */
+
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .carrinho-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Fundo claro */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .carrinho-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .carrinho-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .carrinho-item h3 {
+    color: #333;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  
+  .carrinho-item p {
+    margin: 5px 0;
+    color: #666;
+  }
+  
+  .carrinho-total {
+    text-align: right;
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .carrinho-total span {
+    color: #e94560;
+  }
+  
+  .button-finalizar {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #e94560;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-finalizar:hover {
+    background-color: #d13d55;
+  }
+  
