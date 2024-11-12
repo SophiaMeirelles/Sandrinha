@@ -23,8 +23,8 @@ const Register = () => {
           role,
         }
       );
-        navigate("/Login");
-     } catch (error) {
+      navigate("/Login");
+    } catch (error) {
       setError(error.response?.data?.error || "Erro ao cadastrar");
     }
   };

@@ -8,7 +8,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const  login  = useAuth();
+  const login = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -21,7 +21,7 @@ const Login = () => {
           password,
         }
       );
-        console.log(response.data)
+      console.log(response.data);
       const { token, role } = response.data;
 
       login(token, role);
@@ -63,7 +63,6 @@ const Login = () => {
         <button type="submit">Entrar</button>
       </form>
     </div>
-    
   );
 };
 
