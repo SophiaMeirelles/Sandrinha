@@ -10,7 +10,6 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("user");
   const [error, setError] = useState("");
-  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
@@ -25,17 +24,8 @@ const Register = () => {
           role,
         }
       );
-
-      const { token, role: userRole } = response.data;
-
-      login(token, userRole);
-
-      if (userRole === "admin") {
-        navigate("/admin");
-      } else {
-        navigate("/");
-      }
-    } catch (error) {
+        navigate("/Login");
+     } catch (error) {
       setError(error.response?.data?.error || "Erro ao cadastrar");
     }
   };

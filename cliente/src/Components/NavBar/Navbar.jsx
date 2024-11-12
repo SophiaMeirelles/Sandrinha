@@ -15,7 +15,7 @@ function Navbar() {
           <div className="nav-links">
             <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>INÍCIO</NavLink>
             <NavLink to="/loja" className={({ isActive }) => (isActive ? 'active' : '')}>LOJA</NavLink>
-            <NavLink to="/login" className={({ isActive }) => (isActive ? 'active' : '')}>CONTA</NavLink>
+            <NavLink to="/register" className={({ isActive }) => (isActive ? 'active' : '')}>CONTA</NavLink>
             <NavLink to="/carrinho" className={({ isActive }) => (isActive ? 'active' : '')}>CARRINHO</NavLink>
           </div>
         </div>
