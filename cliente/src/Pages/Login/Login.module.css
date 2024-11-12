@@ -1,121 +1,90 @@
+/* Register.module.css */
 
-  .DivBody{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    height: 80vh;
-    gap: 5vh 5vh;
-  }
-  
-  .card {
-    background-color: #222831;
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-    max-width: 600px;
-    width: 100%;
-    margin: auto;
-  }
-  
-  .card-header {
-    text-align: center;
-    padding-bottom: 20px;
-  }
-  
-  h3 {
-    font-size: 2rem;
-    color: #1517a7;
-    font-weight: bold;
-  }
-  h5 {
-    font-size: 1rem;
-    color: #E8E8E8;
-    font-weight: normal;
-  }
-  
-  h1.mb-4 {
-    margin-bottom: 8px;
-  }
-  
-  /* Typography */
-  .label {
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: #E8E8E8;
-    display: block;
-    margin-bottom: 8px;
-  }
-  /* Input Styles */
-  .input {
-    background-color: #222831;
-    color: #f0f0f0;
-    border: 1px solid #30475E;
-    border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 16px;
-    width: 100%;
-  }
-  
-  .input:focus {
-    outline: none;
-    border-color: #F05454;
-  }
-  
-  /* Button Styles */
-  .button {
-    background-color: #F05454;
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    padding: 12px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #cf3e3e;
-  }
-  
-  .button:active {
-    background-color: #cf3e3e;
-  }
-  
-  /* Outlined Buttons */
-  .outlined-button {
-    background-color: transparent;
-    color: #3498db;
-    border: 2px solid #F05454;
-    padding: 10px 0;
-  }
-  
-  .outlined-button:hover {
-    background-color: rgba(52, 152, 219, 0.1);
-  }
-  
-  .outlined-button img,
-  .outlined-button .h-6 {
-    margin-right: 8px;
-  }
-  
-  /* Responsive Styles */
-  @media (min-width: 768px) {
-    .card {
-      max-width: 450px;
-      padding: 32px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 1.8rem;
-    }
-  
-    .terms {
-      font-size: 0.7rem;
-    }
-  }
-  
-  
+.cadastro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.cadastro h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  color: #374151;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #4c7eff;
+}
+
+button {
+  background-color: #4c7eff;
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3b5bbf;
+}
+
+button:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+p {
+  color: #e53e3e;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+select {
+  appearance: none;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+}
+
+select option {
+  background-color: #fff;
+  color: #374151;
+}
