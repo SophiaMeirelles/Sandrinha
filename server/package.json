@@ -1,7 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,5 +16,6 @@
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
     "sequelize": "^6.37.5"
-  }
+  },
+  "description": ""
 }

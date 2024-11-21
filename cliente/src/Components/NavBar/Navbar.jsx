@@ -27,16 +27,28 @@ function Navbar() {
               LOJA
             </NavLink>
             <NavLink
+              to="/login"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              LOGIN
+            </NavLink>
+            <NavLink
               to="/register"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
-              CONTA
+              REGISTRO
             </NavLink>
             <NavLink
               to="/carrinho"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               CARRINHO
+            </NavLink>
+            <NavLink
+              to="/Admin"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              ADMIN
             </NavLink>
           </div>
         </div>

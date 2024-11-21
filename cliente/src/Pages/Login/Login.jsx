@@ -8,7 +8,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const login = useAuth();
+  const { login } = useAuth(); 
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -27,7 +27,7 @@ const Login = () => {
       login(token, role);
 
       if (role === "admin") {
-        navigate("/admin");
+        navigate("/Admin");
       } else {
         navigate("/");
       }
